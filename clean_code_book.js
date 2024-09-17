@@ -1,12 +1,12 @@
 let Library = [
-  { i: 1, n: "Der alte Mann und das Meer", p: 10.5 },
-  { i: 2, n: "Moby Dick", p: 12.3 },
-  { i: 3, n: "1984", p: 8.5 },
+  { id: 1, title: "Der alte Mann und das Meer", cost: 10.5 },
+  { id: 2, title: "Moby Dick", cost: 12.3 },
+  { id: 3, title: "1984", cost: 8.5 },
 ];
 
 function getBookById(books, id) {
   for (let book of books) {
-    if (book.i == id) {
+    if (book.id == id) {
       return book;
     }
   }
@@ -15,14 +15,14 @@ function getBookById(books, id) {
 function addBook(books, name, price) {
   let maxId = 0;
   for (let book of books) {
-    if (book.i > maxId) maxId = book.i;
+    if (book.id > maxId) maxId = book.id;
   }
-  books.push({ i: maxId + 1, n: name, p: price });
+  return books.push({ id: maxId + 1, title: name, cost: price });
 }
 
 function listBooks(books) {
   for (let book of books) {
-    return `${book.n} - ${book.p}€`;
+    return `${book.title} - ${book.cost}€`;
   }
 }
 
