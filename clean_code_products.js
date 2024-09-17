@@ -1,31 +1,29 @@
 let products = [
-  { id: 1, n: "Laptop", c: 999 },
-  { id: 2, n: "Smartphone", c: 599 },
-  { id: 3, n: "Headphones", c: 199 },
+  { id: 1, name: "Laptop", price: 999 },
+  { id: 2, name: "Smartphone", price: 599 },
+  { id: 3, name: "Headphones", price: 199 },
 ];
 
 function getProductById(products, id) {
   for (let product of products) {
-    if (product.pid == id) return product;
+    if (product.id == id) return product;
   }
 }
 
-function ap(name, cost) {
+function addProduct(products, name, cost) {
   let maxId = 0;
-  for (let p of ps) {
-    if (p.pid > maxId) maxId = p.pid;
+  for (let product of products) {
+    if (product.id > maxId) maxId = product.id;
   }
-  ps.push({ pid: maxId + 1, n: name, c: cost });
+  return products.push({ id: maxId + 1, name: name, price: cost });
 }
 
-function lp() {
-  for (let p of ps) {
-    console.log(p.n + " costs " + p.c + "€");
+function listProduct(products) {
+  for (let product of products) {
+    return product.name + " costs " + product.price + "€";
   }
 }
 
-// Use functions
-let p1 = gp(2);
-console.log(p1);
-ap("Tablet", 399);
-lp();
+console.log(getProductById(products, 2));
+addProduct(products, "Tablet", 399);
+console.log(listProduct(products));
