@@ -1,7 +1,7 @@
-let Library = [
-  { id: 1, title: "Der alte Mann und das Meer", cost: 10.5 },
-  { id: 2, title: "Moby Dick", cost: 12.3 },
-  { id: 3, title: "1984", cost: 8.5 },
+let library = [
+  { id: 1, title: 'Der alte Mann und das Meer', cost: 10.5 },
+  { id: 2, title: 'Moby Dick', cost: 12.3 },
+  { id: 3, title: '1984', cost: 8.5 },
 ];
 
 function getBookById(books, id) {
@@ -26,7 +26,7 @@ function listBooks(books) {
   }
 }
 
-console.log(listBooks(Library));
-console.log(getBookById(Library, 2));
-addBook("Fahrenheit 451", 9.2);
-console.log(Library);
+console.log(listBooks(library));
+console.log(getBookById(library, 2));
+addBook('Fahrenheit 451', 9.2);
+console.log(library);
